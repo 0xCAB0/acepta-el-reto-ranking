@@ -17,4 +17,4 @@ Feel free to contribute to the project with more metrics of your choice
 
 > The data scrapping is performed using publicly available data from the website API
 
-![Result chart](result.png)
+![Result chart](https://0xcab0.github.io/acepta-el-reto-ranking/result.png)
