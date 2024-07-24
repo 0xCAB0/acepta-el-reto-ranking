@@ -17,4 +17,4 @@ Feel free to contribute to the project with more metrics of your choice
 
 > The data scrapping is performed using publicly available data from the website API
 
-![Result chart](result.jpg)
+![Result chart](result.png)
