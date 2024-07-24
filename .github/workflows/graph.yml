@@ -27,7 +27,7 @@ jobs:
 
     - name: Generate graph
       run: |
-        python generate_graph.py # Your script to generate the graph
+        python ranking.py # Your script to generate the graph
 
     - name: Commit and push the graph
       run: |
