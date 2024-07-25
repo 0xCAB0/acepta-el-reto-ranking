@@ -29,11 +29,7 @@ jobs:
       run: |
         python ranking.py # Your script to generate the graph
 
-    - name: Commit and push the graph
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -f result.png
-        git diff-index --quiet HEAD || git commit -m 'Update graph'
-        git push
-
+    - name: Update changes in repo
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: -f result.png 
