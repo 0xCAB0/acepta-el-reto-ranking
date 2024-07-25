@@ -78,7 +78,7 @@ def list_hard_problems(problem_map: dict):
 
 if __name__ == '__main__':
     problem_map = fetch()
-    result_file = open(OUTPUT_FILE_MD, "x")
+    result_file = open(OUTPUT_FILE_MD, "w")
     result_file.write(list_hard_problems(problem_map))
     result_file.close()
     plot(problem_map)
