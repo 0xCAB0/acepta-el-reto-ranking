@@ -4,6 +4,8 @@ from math import floor
 API_URL = "https://aceptaelreto.com/ws/volume/"
 HARD = 0.5
 MEDIUM = 0.75
+OUTPUT_FILE = "output/result.png"
+OUTPUT_FILE_MD = "output/result.md"
 
 def fetch():
 
@@ -41,14 +43,15 @@ def plot(problem_map: dict):
     plt.xlabel('Problem ID')
     plt.ylabel('Index')
     # ('Number of users who solved the problem/Total number of users who attempted the problem')
-    plt.title('Distribution of Problem Indices')
+    from time import gmtime, strftime
+    time = strftime("%d-%m-%Y", gmtime())
+    plt.title(f'Problems success rate @ {time}')
 
     # Draw horizontal dotted lines
     plt.axhline(y=HARD, color='gray', linestyle='dotted', label='Easy')
     plt.axhline(y=MEDIUM, color='gray', linestyle='dotted', label='Medium')
 
-    plt.savefig('result.png')
-    #plt.show()
+    plt.savefig(OUTPUT_FILE)
 
 def get_score(problem_number: int, problem_map: dict):
     if (problem_map is None):
@@ -68,11 +71,14 @@ def list_hard_problems(problem_map: dict):
         if volume not in volume_map:
             volume_map[volume] = []
         volume_map[volume].append(problem_id)
-    print("Hardest problems by volume:\n")
+    result = ""
     for volume, problems in volume_map.items():
-        print(f"Volume {volume}: {problems}")
+        result += f"- Volume {volume}: {problems}\n"
+    return result
 
 if __name__ == '__main__':
     problem_map = fetch()
-    list_hard_problems(problem_map)
+    result_file = open(OUTPUT_FILE_MD, "x")
+    result_file.write(list_hard_problems(problem_map))
+    result_file.close()
     plot(problem_map)
