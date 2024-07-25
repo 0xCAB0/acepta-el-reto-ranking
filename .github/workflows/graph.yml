@@ -32,4 +32,5 @@ jobs:
     - name: Update changes in repo
       uses: EndBug/add-and-commit@v9
       with:
-        add: -f result.png
+        add: -f output
+
