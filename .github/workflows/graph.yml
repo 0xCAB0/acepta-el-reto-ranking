@@ -33,4 +33,3 @@ jobs:
       uses: EndBug/add-and-commit@v9
       with:
         add: -f result.png
-        github_token: ${{secrets.TOKEN_GITHUB}}
