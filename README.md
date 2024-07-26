@@ -1,6 +1,6 @@
 # Acepta el reto ranking
 
-This project is intended to serve as a quick orientation for students, teachers and new-commers for `[acepta el reto](https://aceptaelreto.com/)`.
+This project is intended to serve as a quick orientation for students, teachers and new-commers for [`acepta el reto`](https://aceptaelreto.com/).
 It ranks the problems according to their success rate.
 
 Feel free to contribute to the project with more metrics of your choice
